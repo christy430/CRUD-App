@@ -1,0 +1,54 @@
+
+
+#login{
+    
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    height:100vh;
+    display: flex;
+    background-position: center;  
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+ .navbar{
+    background-color:rgba(25, 84, 222, 0.737);
+} 
+
+
+
+
+/*admin-login*/
+
+    .custom-login-section {
+        background-color:white; /* Set a background color */
+        padding: 20px; /* Add some padding */
+    }
+
+    .custom-login-container {
+        background-color: #7579ff; /* Set a white background color */
+        width: 40%; /* Adjust the width as needed */
+        height: 300px; /* Adjust the height as needed */
+        margin: auto; /* Center the container horizontally */
+        padding: 20px; /* Add some padding */
+        box-sizing: border-box; /* Include padding*/
+    }
+
+    .custom-login-title {
+        color: white; /* Set a dark text color */
+    }
+
+    .form-group {
+        margin-bottom: 20px; /* Add some space between form groups */
+    }
+
+    .btn-login {
+        background-color: rgba(238, 233, 233, 0.964); /* Set a green background color for the submit button */
+        border-color: white; /* Set a matching border color */
+    }
+
+    .btn-success:hover {
+        background-color: rgba(138, 232, 228, 0.607); /* Darken the background color on hover */
+        border-color:white; /* Darken the border color on hover */
+    }
+

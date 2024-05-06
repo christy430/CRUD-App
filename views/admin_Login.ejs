@@ -1,0 +1,51 @@
+<%-include('layout/header') %>
+
+
+<div class="custom-login-section text-center center-div mt-5 bg-image" id="login">
+  <div class="custom-login-container w-25 border py-4 rounded-5 border-dark border-3">
+      <div class="custom-login-title">
+          <h2 class="font-weight-bold">Admin Login</h2>
+          <% if(locals.message){ %>
+              <div class="alert alert-success" id="alertButton">
+                  <%= locals.message %>
+              </div>
+          <% } %>
+          <% if(locals.logout){ %>
+              <div class="alert h-1 alert-success text-center">
+                  <%= logout %>
+              </div>
+          <% } %>
+      </div>
+      <form action="/admin_login" method="POST">
+          <div class="form-group">
+              <input type="email" class="form-control" placeholder="Email" name="email">
+              <% if(locals.error_email){ %>
+                  <div class="text-center text-danger">
+                      <%= error_email %>
+                  </div>
+              <% } %>
+              <small class="form-text text-white text-left mt-1">Register email address</small>
+          </div>
+          <div class="form-group">
+              <input type="password" class="form-control" name="password" placeholder="Password">
+              <% if(locals.error_password){ %>
+                  <div class="text-center text-danger">
+                      <%= error_password %>
+                  </div>
+              <% } %>
+          </div>
+          <button type="submit" class="btn-login rounded-pill mt-3" style="width: 150px; height: 35px;">Log In</button>
+      </form>
+  </div>
+</div>
+
+
+<script>
+  setTimeout(()=>{
+    document.getElementById("alertButton").style.display="none"
+  },3000)
+</script>
+
+
+
+<%-include('layout/footer')-%>

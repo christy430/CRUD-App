@@ -1,0 +1,82 @@
+<%-include('layout/header') %>
+
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><i class="bi bi-tropical-storm"></i><b>CRUD</b></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto mb-2 mb-lg-0 ">
+          <li class="nav-item ">
+            <a class="nav-link active" aria-current="page" href="/adminHome"><i class="bi bi-house"></i></a>
+          </li>
+          <li class="nav-item  ">
+            <a class="nav-link active" href="/add_users"><i class="bi bi-person-fill-add"></i></a>
+          </li>
+          <li class="nav-item  ">
+            <a class="nav-link active" href="/adminlogout"><i class="bi bi-box-arrow-right"></i></i></a>
+          </li>
+          
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+<div class="container">
+    <div class="row my-4">
+        <div class="col-lg-12">
+            <% if (message) { %>
+                <div class="alert alert-dismissible fade show alert-<%= message.type %>" role="alert">
+                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="close"></button>
+                    <strong><%= message.message %></strong>
+                </div>
+            <% } %>
+            <div class="table-responsive">
+                <table class="table table-stripped text-center">
+                    <thead>
+                        <tr class="table-dark">
+                            <th>Id</th>
+                            
+                            <th>Name</th>
+                            <th>E-Mail</th>
+                            <th>Phone</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%let i=0;for(let users of user){%>
+                            
+                        <tr class="align-items-center">
+                            <td><%= ++i%></td>
+                            
+                            <td><%= users.name%></td>
+                            <td><%= users.email%></td>
+                            <td><%= users.phone%></td>
+                            <td>
+                                <a href="/edit/<%=users._id%>" class="text-success"><i class="bi bi-pen"></i></a>
+                                <a href="/delete/<%=users._id%>"" class="text-danger"><i class="bi bi-trash"></i></a>
+                            </td>
+
+                        </tr>
+                       <%}%>
+                    </tbody>
+                </table>
+                
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<%-include('layout/footer') %>
